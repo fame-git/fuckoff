@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-go-clusterip
+  name: devops-blue-server
   labels:
-    app.kubernetes.io/name: back-go
+    app.kubernetes.io/name: devops-ingress-blue
 spec:
   selector:
-    app.kubernetes.io/name: back-go
+    app.kubernetes.io/name: devops-ingress-blue
   ports:
   - port: 8111
     name: http
