@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-go
+  labels:
+    app.kubernetes.io/name: back-go
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: back-go
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: back-go
+    spec:
+      containers:
+      - name: web-go
+        image: famedocker/tryout:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: 100m
+        ports:
+        - containerPort: 8111
+          name: http
+          protocol: TCP
+  replicas: 1

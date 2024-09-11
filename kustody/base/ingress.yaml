@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backgo-ingress
+  labels:
+    app.kubernetes.io/name: back-go
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - pathType: Prefix
+        path: /devops
+        backend:
+          service:
+            name: hello-go-clusterip
+            port: 
+              number: 8111
