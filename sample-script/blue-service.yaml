@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-blue-service
+  labels:
+    app.kubernetes.io/name: devops-blue
+spec:
+  selector:
+    app.kubernetes.io/name: devops-blue
+  ports:
+  - name: devops-blue-port
+    port: 8111                  # port number to be available at host
+    targetPort: 8111            # port on pod
+  type: LoadBalancer
