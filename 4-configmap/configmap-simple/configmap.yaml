@@ -1,0 +1,15 @@
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  namespace: devops
+  name: devops-blue-configmap                                   # configmap-name
+immutable: false    # optional, if set to true then data cannot be changed later
+data:
+  html.color.background: "#0c53b0"                              # configmap-key-A
+  html.color.text: "#ffff00"                                    # configmap-key-B
+  html.text.one: "This is the 1st text from k8s configmap"    # configmap-key-C
+  html.text.two: "This is the 2nd text from k8s configmap"   # configmap-key-D
+  html.text.three: "This is the 3rd text from k8s configmap"  # configmap-key-E
+  html.text.four: "This is the FOURTH text from k8s configmap"  # configmap-key-F
+  html.text.five: "This is the FIFTH text from k8s configmap"   # configmap-key-G
+  html.text.six: "This is the SIXTH text from k8s configmap"    # configmap-key-H
